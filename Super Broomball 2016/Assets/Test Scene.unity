@@ -183,9 +183,10 @@ GameObject:
   - 4: {fileID: 421925547}
   - 212: {fileID: 421925546}
   - 114: {fileID: 421925548}
+  - 50: {fileID: 421925549}
   m_Layer: 0
   m_Name: player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -227,7 +228,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 421925545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4, y: 0.27, z: 0}
+  m_LocalPosition: {x: -2.46, y: 0.43, z: 0}
   m_LocalScale: {x: 0.41693917, y: 0.44741315, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -243,6 +244,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59f8fa5565c009f439033d18f7085378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &421925549
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421925545}
+  m_UseAutoMass: 1
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &484167350
 GameObject:
   m_ObjectHideFlags: 0
