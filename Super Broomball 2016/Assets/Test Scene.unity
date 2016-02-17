@@ -184,6 +184,7 @@ GameObject:
   - 212: {fileID: 421925546}
   - 114: {fileID: 421925548}
   - 50: {fileID: 421925549}
+  - 61: {fileID: 421925550}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -228,8 +229,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 421925545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.46, y: 0.43, z: 0}
-  m_LocalScale: {x: 0.41693917, y: 0.44741315, z: 1}
+  m_LocalPosition: {x: -2.21, y: 0.51, z: -1}
+  m_LocalScale: {x: 0.41693917, y: 0.46068278, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -252,7 +253,7 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 421925545}
   m_UseAutoMass: 1
-  m_Mass: 1
+  m_Mass: 0.33198822
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -260,7 +261,21 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!61 &421925550
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 421925545}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: -1.2702667}
+  serializedVersion: 2
+  m_Size: {x: 3.569999, y: 0.48414984}
 --- !u!1 &484167350
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,8 +432,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 1782890385}
   - 33: {fileID: 1782890384}
-  - 65: {fileID: 1782890383}
   - 23: {fileID: 1782890382}
+  - 61: {fileID: 1782890383}
   m_Layer: 0
   m_Name: Cube Dude (Test Asset)
   m_TagString: Untagged
@@ -452,18 +467,20 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!65 &1782890383
-BoxCollider:
+--- !u!61 &1782890383
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1782890381}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
 --- !u!33 &1782890384
 MeshFilter:
   m_ObjectHideFlags: 0
