@@ -3,7 +3,9 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour {
 
-    private Vector2 speed = new Vector2(5, 5);
+    public int xSpeed = 5;
+    public int ySpeed = 5;
+
     private Vector2 movement;
     private bool facingRight;
 
@@ -27,8 +29,8 @@ public class PlayerScript : MonoBehaviour {
         }
 
         movement = new Vector2(
-            speed.x * inX,
-            speed.y * inY    
+            xSpeed * inX,
+            ySpeed * inY    
         );
 
 
