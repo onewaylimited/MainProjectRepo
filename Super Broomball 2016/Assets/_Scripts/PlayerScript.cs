@@ -6,19 +6,21 @@ public class PlayerScript : MonoBehaviour {
     public int xSpeed = 5;
     public int ySpeed = 5;
 
+    public string xaxis = "P1X";
+    public string yaxis = "P1Y";
+
     private Vector2 movement;
-    private bool facingRight;
+    public bool facingRight;
 
 	// Use this for initialization
 	void Start () {
-        facingRight = true;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        float inX = Input.GetAxis("P1X");
-        float inY = Input.GetAxis("P1Y");
+        float inX = Input.GetAxis(xaxis);
+        float inY = Input.GetAxis(yaxis);
 
         // Flip the character to face direction of movement
         if(inX < 0 && facingRight) {
