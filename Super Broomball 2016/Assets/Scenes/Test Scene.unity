@@ -232,7 +232,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 421925545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.56, y: -1.34, z: -0.1}
+  m_LocalPosition: {x: -1.84, y: -1.34, z: -0.1}
   m_LocalScale: {x: 0.41693917, y: 0.44741315, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -250,6 +250,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 5
   ySpeed: 5
+  xaxis: P1X
+  yaxis: P1Y
+  facingRight: 1
 --- !u!50 &421925549
 Rigidbody2D:
   serializedVersion: 2
@@ -577,11 +580,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1731666064}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea19b4291fdc2e24fa2efee97427ea86, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f8fa5565c009f439033d18f7085378, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 5
   ySpeed: 5
+  xaxis: P2X
+  yaxis: P2Y
+  facingRight: 0
 --- !u!212 &1731666068
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -619,7 +625,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1731666064}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.056, y: -1.355, z: -0.1}
+  m_LocalPosition: {x: 2.14, y: 2.06, z: -0.1}
   m_LocalScale: {x: 0.41693917, y: 0.44741315, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
