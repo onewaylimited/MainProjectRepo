@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlayerScript : MonoBehaviour {
+public class Player2Script : MonoBehaviour {
 
     public int xSpeed = 5;
     public int ySpeed = 5;
@@ -11,14 +11,14 @@ public class PlayerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        facingRight = true;
+        facingRight = false;
 	}
 	
 	// Update is called once per frame
 	void Update ()
     {
-        float inX = Input.GetAxis("P1X");
-        float inY = Input.GetAxis("P1Y");
+        float inX = Input.GetAxis("P2X");
+        float inY = Input.GetAxis("P2Y");
 
         // Flip the character to face direction of movement
         if(inX < 0 && facingRight) {
