@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour {
 
     private Vector2 movement;
     public bool facingRight;
+    GameObject ball;
+    public bool hasPossession;
 
 	// Use this for initialization
 	void Start () {
@@ -34,7 +36,10 @@ public class PlayerScript : MonoBehaviour {
             xSpeed * inX,
             ySpeed * inY    
         );
-
+        if (Input.GetMouseButtonDown(0) && hasPossession)
+        {
+            Shoot(ball);
+        }
 
     }
 
@@ -59,5 +64,19 @@ public class PlayerScript : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D coll)
     {
         //broom interactions
+        if(coll.gameObject.tag == "ball")
+        {
+            hasPossession = true;
+            ball = coll.gameObject; 
+        }
+    }
+
+    void Shoot(GameObject ball)
+    {
+        
+        Vector2 shoot = (ball.GetComponent<Transform>().position - Input.mousePosition);
+        ball.GetComponent<Rigidbody2D>().AddForce(shoot);
+        hasPossession = false;
+        ball = null;
     }
 }
