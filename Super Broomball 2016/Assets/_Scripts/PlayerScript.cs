@@ -14,7 +14,7 @@ public class PlayerScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	}
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -54,5 +54,10 @@ public class PlayerScript : MonoBehaviour {
         Vector3 charScale = transform.localScale;
         charScale.x *= -1;
         transform.localScale = charScale;
+    }
+
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+        //broom interactions
     }
 }
