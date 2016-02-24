@@ -9,12 +9,8 @@ GameObject:
   m_Component:
   - 4: {fileID: 418626}
   - 212: {fileID: 21213102}
-<<<<<<< HEAD
   - 58: {fileID: 5833232}
   - 50: {fileID: 5007356}
-=======
-  - 58: {fileID: 5856434}
->>>>>>> origin/master
   m_Layer: 0
   m_Name: Broomball
   m_TagString: Untagged
@@ -34,7 +30,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-<<<<<<< HEAD
 --- !u!50 &5007356
 Rigidbody2D:
   serializedVersion: 2
@@ -53,9 +48,6 @@ Rigidbody2D:
   m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!58 &5833232
-=======
---- !u!58 &5856434
->>>>>>> origin/master
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
