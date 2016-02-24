@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 418626}
   - 212: {fileID: 21213102}
-  - 58: {fileID: 5833232}
+  - 58: {fileID: 5856434}
   m_Layer: 0
   m_Name: Broomball
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!58 &5833232
+--- !u!58 &5856434
 CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,7 +37,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 142428}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 2ed4041ef00e37b46b2d283222d530a6, type: 2}
+  m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
