@@ -15,7 +15,7 @@ public class Ball_Handling : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
         print("Collider is active");
         if(col.gameObject.name == "Ball_Sprite")
