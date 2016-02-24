@@ -132,6 +132,10 @@ Prefab:
       propertyPath: m_TagString
       value: ball
       objectReference: {fileID: 0}
+    - target: {fileID: 5856434, guid: b198c52724c8068458ef7b1fc481194f, type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: c9948be0eaba08e46820e1a722f89e6c, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b198c52724c8068458ef7b1fc481194f, type: 2}
   m_IsPrefabParent: 0
