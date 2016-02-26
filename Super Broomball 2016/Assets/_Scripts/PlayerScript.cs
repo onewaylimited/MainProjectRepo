@@ -11,9 +11,11 @@ public class PlayerScript : MonoBehaviour {
 
     private Vector2 movement;
     public bool facingRight;
-    GameObject ball;
+    public GameObject ball;
     public bool hasPossession;
-
+    public float x;
+    public float y;
+    public Vector2 read;
 	// Use this for initialization
 	void Start () {
     }
@@ -23,7 +25,7 @@ public class PlayerScript : MonoBehaviour {
     {
         float inX = Input.GetAxis(xaxis);
         float inY = Input.GetAxis(yaxis);
-
+       
         // Flip the character to face direction of movement
         if(inX < 0 && facingRight) {
             Flip();
@@ -74,7 +76,7 @@ public class PlayerScript : MonoBehaviour {
     void Shoot(GameObject ball)
     {
         
-        Vector2 shoot = (ball.GetComponent<Transform>().position - Input.mousePosition);
+        Vector2 shoot = (Input.mousePosition - ball.GetComponent<Transform>().position);
         ball.GetComponent<Rigidbody2D>().AddForce(shoot);
         hasPossession = false;
         ball = null;
