@@ -3,6 +3,7 @@ using System.Collections;
 
 public class BallScript : MonoBehaviour {
 
+    
     Rigidbody2D player;
     public bool inPossession;
 
@@ -17,6 +18,6 @@ public class BallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        
 	}
 }

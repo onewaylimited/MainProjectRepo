@@ -8,14 +8,16 @@ public class PlayerScript : MonoBehaviour {
 
     public string xaxis = "P1X";
     public string yaxis = "P1Y";
-
+    
     private Vector2 movement;
     public bool facingRight;
-    public GameObject ball;
+    public GameObject ball = null;
     public bool hasPossession;
-    public float x;
-    public float y;
-    public Vector2 read;
+    public float multiplier = 50; 
+    //public Vector3 worldPos;
+   // public Vector3 ballPos;
+    //public Vector3 shoot;
+    
 	// Use this for initialization
 	void Start () {
     }
@@ -42,7 +44,9 @@ public class PlayerScript : MonoBehaviour {
         {
             Shoot(ball);
         }
-
+        //worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
+        //ballPos = ball.GetComponent<Transform>().position;
+       // shoot = worldPos - ballPos;
     }
 
     void FixedUpdate()
@@ -75,8 +79,10 @@ public class PlayerScript : MonoBehaviour {
 
     void Shoot(GameObject ball)
     {
-        
-        Vector2 shoot = (Input.mousePosition - ball.GetComponent<Transform>().position);
+        Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
+        Vector3 ballPos = ball.GetComponent<Transform>().position;
+        Vector3 shoot = multiplier*(worldPos - ballPos);
+        //shoot = (worldPos - ball.GetComponent<Transform>().position);
         ball.GetComponent<Rigidbody2D>().AddForce(shoot);
         hasPossession = false;
         ball = null;
