@@ -18,7 +18,7 @@ public class BallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (inPossession)
+        if (player != null)
         {
             follow();
         }
