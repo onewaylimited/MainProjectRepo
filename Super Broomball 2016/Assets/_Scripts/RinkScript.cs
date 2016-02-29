@@ -18,7 +18,11 @@ public class RinkScript : MonoBehaviour {
 	}
 
     void OnTriggerEnter2D(Collider2D coll) {
-        if (coll.gameObject.tag == "ball") print(leftTeam?"Right team scored!":"Left team scored!");
+        if (coll.gameObject.tag == "ball")
+        {
+            print(leftTeam ? "Right team scored!" : "Left team scored!");
+            coll.gameObject.GetComponent<BallScript>().returnToCenter();
+        }
     }
 
     void OnCollisionEnter2D(Collision2D coll) {
