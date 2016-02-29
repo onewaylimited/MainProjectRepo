@@ -77,6 +77,16 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Needed so you cannot shot the ball outside of the stick trigger
+    /// </summary>
+    /// <param name="coll">2D Collider attached to player characters</param>
+    void OnTriggerExit2D(Collider2D coll) {
+        if(coll.gameObject.tag == "ball") {
+            hasPossession = false;
+        }
+    }
+
     void Shoot(GameObject ball)
     {
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
