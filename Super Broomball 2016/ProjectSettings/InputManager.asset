@@ -134,11 +134,11 @@ InputManager:
     axis: 1
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Fire3
+    m_Name: Shoot
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left shift
+    positiveButton: joystick button 0
     altNegativeButton: 
     altPositiveButton: mouse 2
     gravity: 1000

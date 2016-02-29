@@ -8,6 +8,8 @@ public class PlayerScript : MonoBehaviour {
 
     public string xaxis = "P1X";
     public string yaxis = "P1Y";
+
+    public float shotStrength = 5;
     
     private Vector2 movement;
     public bool facingRight;
@@ -40,8 +42,15 @@ public class PlayerScript : MonoBehaviour {
             xSpeed * inX,
             ySpeed * inY    
         );
+
+        // Mouse Support
         if (Input.GetMouseButtonDown(0) && hasPossession)
         {
+            Shoot(ball);
+        }
+
+        // JoyStick Support
+        if (Input.GetButtonDown("Shoot") && hasPossession) {
             Shoot(ball);
         }
         //worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
@@ -87,6 +96,10 @@ public class PlayerScript : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="ball"></param>
     void Shoot(GameObject ball)
     {
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
@@ -96,5 +109,19 @@ public class PlayerScript : MonoBehaviour {
         ball.GetComponent<Rigidbody2D>().AddForce(shoot);
         hasPossession = false;
         ball = null;
+    }
+
+    /// <summary>
+    /// Shooting function for controllers
+    /// </summary>
+    /// <param name="ball"></param>
+    void JoystickShoot(GameObject ball) {
+        float inX = Input.GetAxis("P1X");
+        float inY = Input.GetAxis("P1Y");
+
+        Vector2 shotForce = new Vector2(inX, inY);
+        shotForce *= shotStrength;
+
+        ball.GetComponent<Rigidbody2D>().AddForce(shotForce);
     }
 }
