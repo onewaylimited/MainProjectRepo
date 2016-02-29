@@ -127,7 +127,7 @@ public class PlayerScript : MonoBehaviour {
     void JoystickShoot(GameObject ball) {
         Vector2 shotForce = lastDirection;
 
-        // x6 multiplier needed for believable shot
+        // x50 multiplier needed for believable shot
         shotForce *= (shotStrength * 50);
 
         ball.GetComponent<Rigidbody2D>().AddForce(shotForce);
