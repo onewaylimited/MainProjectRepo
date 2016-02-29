@@ -842,7 +842,7 @@ MonoBehaviour:
   facingRight: 1
   ball: {fileID: 0}
   hasPossession: 0
-  multiplier: 50
+  multiplier: 100
 --- !u!23 &1611385017
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1026,3 +1026,4 @@ MonoBehaviour:
   player: {fileID: 0}
   inPossession: 0
   followSpeed: 5
+  play: {fileID: 0}
