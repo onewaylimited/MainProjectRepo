@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
     public int xSpeed = 5;
     public int ySpeed = 5;
-
+    public Vector3 mouse;
     public string xaxis = "P1X";
     public string yaxis = "P1Y";
 
@@ -27,6 +27,7 @@ public class PlayerScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        mouse = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
         float inX = Input.GetAxis(xaxis);
         float inY = Input.GetAxis(yaxis);
        
@@ -57,7 +58,10 @@ public class PlayerScript : MonoBehaviour {
         //ballPos = ball.GetComponent<Transform>().position;
        // shoot = worldPos - ballPos;
     }
-
+    public bool getBool()
+    {
+            return facingRight;
+    }
     void FixedUpdate()
     {
         GetComponent<Rigidbody2D>().velocity = movement;
@@ -93,6 +97,7 @@ public class PlayerScript : MonoBehaviour {
     void OnTriggerExit2D(Collider2D coll) {
         if(coll.gameObject.tag == "ball") {
             hasPossession = false;
+            ball = null;
         }
     }
 
