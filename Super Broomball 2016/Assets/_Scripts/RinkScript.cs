@@ -21,7 +21,7 @@ public class RinkScript : MonoBehaviour {
         if (coll.gameObject.tag == "ball")
         {
             print(leftTeam ? "Right team scored!" : "Left team scored!");
-            coll.gameObject.GetComponent<BallScript>().returnToCenter();
+            //coll.gameObject.GetComponent<BallScript>().returnToCenter();
         }
     }
 
