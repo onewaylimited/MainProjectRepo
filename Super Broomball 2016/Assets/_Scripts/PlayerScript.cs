@@ -106,7 +106,6 @@ public class PlayerScript : MonoBehaviour {
     void OnTriggerExit2D(Collider2D coll) {
         if(coll.gameObject.tag == "ball") {
             hasPossession = false;
-            ball = null;
         }
     }
 

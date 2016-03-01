@@ -20,7 +20,7 @@ public class BallScript : MonoBehaviour {
 	void Update () {
         if (player != null)
         {
-            follow();
+           follow();
         }
 	}
 
@@ -37,17 +37,18 @@ public class BallScript : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "ball")
+        if (coll.gameObject.tag == "player")
         {
             inPossession = false;
             player = null;
             play = null;
+            print("Exited trigger");
         }
     }
 
     void follow()
     {
-        if (play.getBool())
+       if (play.getBool())
         {
             transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.GetComponent<Transform>().position.x + .5F, player.GetComponent<Transform>().position.y -.4F, player.GetComponent<Transform>().position.z) , followSpeed * Time.deltaTime);
         }
