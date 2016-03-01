@@ -8,12 +8,13 @@ public class PlayerScript : MonoBehaviour {
     public Vector3 mouse;
     public string xaxis = "P1X";
     public string yaxis = "P1Y";
+    public string rxAxis = "P1SX";
+    public string ryAxis = "P1SY";
 
     // Around 200-250 good range for this
     public float shotStrength = 200;
     
     private Vector2 movement;
-    private Vector2 lastDirection;
     public bool facingRight;
     public GameObject ball = null;
     public bool hasPossession;
@@ -24,17 +25,25 @@ public class PlayerScript : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
+
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         mouse = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
+
+        // Get input from joysticks
         float inX = Input.GetAxis(xaxis);
         float inY = Input.GetAxis(yaxis);
-       
+
+        float dirX = Input.GetAxis(rxAxis);
+        float dirY = Input.GetAxis(ryAxis);
+
+        print("Move Direction: " + inX + ", " + inY);
+
         // Flip the character to face direction of movement
-        if(inX < 0 && facingRight) {
+        if (inX < 0 && facingRight) {
             Flip();
         }
         else if(inX > 0 && !facingRight) {
@@ -45,14 +54,7 @@ public class PlayerScript : MonoBehaviour {
             xSpeed * inX,
             ySpeed * inY    
         );
-
-        //Keep track of last direction (for joysticks)
-        if(inX != 0 || inY != 0) {
-            lastDirection.x = inX;
-            lastDirection.y = inY;
-        }
   
-
         // Mouse Support
         if (Input.GetMouseButtonDown(0) && hasPossession)
         {
@@ -61,6 +63,7 @@ public class PlayerScript : MonoBehaviour {
 
         // JoyStick Support
         if (Input.GetButtonDown("Shoot") && hasPossession) {
+            print("Shoot");
             JoystickShoot(ball);
         }
         //worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
@@ -129,12 +132,18 @@ public class PlayerScript : MonoBehaviour {
     /// </summary>
     /// <param name="ball"></param>
     void JoystickShoot(GameObject ball) {
-        Vector2 shotForce = lastDirection;
+
+        float dirX = Input.GetAxis(rxAxis);
+        float dirY = Input.GetAxis(ryAxis);
+
+        print("Shot Direction: " + dirX + ", " + dirY);
+
+        Vector2 direction = new Vector2(dirX, dirY);
 
         // x6 multiplier needed for believable shot
-        shotForce *= (shotStrength * 50);
+        direction *= (shotStrength * 50);
 
-        ball.GetComponent<Rigidbody2D>().AddForce(shotForce);
+        ball.GetComponent<Rigidbody2D>().AddForce(direction);
 
         print("Shot Taken!");
     }

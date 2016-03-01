@@ -27,7 +27,7 @@ public class BallScript : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D coll)
     {
        
-        if (coll.gameObject.tag == "player")
+        if (coll.gameObject.tag == "player" && coll.isTrigger)
         {
             inPossession = true;
             player = coll.gameObject;
@@ -37,12 +37,11 @@ public class BallScript : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "player")
+        if (coll.gameObject.tag == "player" && coll.isTrigger)
         {
             inPossession = false;
             player = null;
             play = null;
-            print("Exited trigger");
         }
     }
 
