@@ -3,11 +3,11 @@ using System.Collections;
 
 public class BallScript : MonoBehaviour {
 
-    
-    Rigidbody2D player;
+    public GameObject player;
+    Rigidbody2D rb;
     public bool inPossession;
-
-
+    public float followSpeed = 2;
+    public PlayerScript play;
     private AudioSource source;
 
 
@@ -18,6 +18,40 @@ public class BallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        
+        if (player != null)
+        {
+            follow();
+        }
 	}
+
+    void OnTriggerEnter2D(Collider2D coll)
+    {
+       
+        if (coll.gameObject.tag == "player")
+        {
+            inPossession = true;
+            player = coll.gameObject;
+            play = (PlayerScript)player.GetComponent(typeof(PlayerScript));
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "ball")
+        {
+            inPossession = false;
+            player = null;
+            play = null;
+        }
+    }
+
+    void follow()
+    {
+        if (play.getBool())
+        {
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.GetComponent<Transform>().position.x + .5F, player.GetComponent<Transform>().position.y -.4F, player.GetComponent<Transform>().position.z) , followSpeed * Time.deltaTime);
+        }
+        else
+            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.GetComponent<Transform>().position.x - .5F, player.GetComponent<Transform>().position.y - .4F, player.GetComponent<Transform>().position.z), followSpeed * Time.deltaTime);
+    }
 }
