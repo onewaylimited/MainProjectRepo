@@ -135,12 +135,12 @@ InputManager:
     joyNum: 2
   - serializedVersion: 3
     m_Name: Shoot
-    descriptiveName: Joystick
+    descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: joystick button 0
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: mouse 2
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -148,7 +148,7 @@ InputManager:
     invert: 0
     type: 0
     axis: 0
-    joyNum: 1
+    joyNum: 0
   - serializedVersion: 3
     m_Name: Jump
     descriptiveName: 
