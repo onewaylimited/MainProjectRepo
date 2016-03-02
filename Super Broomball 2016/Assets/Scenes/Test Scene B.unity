@@ -352,14 +352,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 5
   ySpeed: 5
-  mouse: {x: 0, y: 0, z: 0}
   xaxis: P2X
   yaxis: P2Y
+  rxAxis: P1SX
+  ryAxis: P1SY
+  boxCollider: {fileID: 0}
   shotStrength: 5
   facingRight: 0
   ball: {fileID: 0}
   hasPossession: 0
   multiplier: 50
+  ballScript: {fileID: 0}
 --- !u!23 &677353451
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -835,14 +838,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 5
   ySpeed: 5
-  mouse: {x: 0, y: 0, z: 0}
   xaxis: P1X
   yaxis: P1Y
+  rxAxis: P1SX
+  ryAxis: P1SY
+  boxCollider: {fileID: 1611385021}
   shotStrength: 5
   facingRight: 1
   ball: {fileID: 0}
   hasPossession: 0
   multiplier: 50
+  ballScript: {fileID: 0}
 --- !u!23 &1611385017
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1026,3 +1032,4 @@ MonoBehaviour:
   player: {fileID: 0}
   inPossession: 0
   followSpeed: 5
+  play: {fileID: 0}
