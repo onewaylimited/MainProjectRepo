@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour {
 
     // Around 200-250 good range for this
     public float shotStrength = 200;
+
+    public BoxCollider2D boxCollider;
     
     private Vector2 movement;
     public bool facingRight;
@@ -86,6 +88,10 @@ public class PlayerScript : MonoBehaviour {
         Vector3 charScale = transform.localScale;
         charScale.x *= -1;
         transform.localScale = charScale;
+    }
+
+    public BoxCollider2D getBoxCollider() {
+        return boxCollider;
     }
 
     void OnTriggerEnter2D(Collider2D coll)
