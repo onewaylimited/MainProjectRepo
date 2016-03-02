@@ -39,10 +39,6 @@ public class BallScript : MonoBehaviour {
             player = coll.gameObject;
             play = (PlayerScript)player.GetComponent(typeof(PlayerScript));
             followPlayer = true;
-            BoxCollider2D playerBox = play.getBoxCollider();
-            if(playerBox != null) {
-                Physics2D.IgnoreCollision(playerBox, GetComponent<Collider2D>());
-            }
         }
     }
 
