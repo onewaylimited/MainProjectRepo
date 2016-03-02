@@ -5,7 +5,7 @@ public class PlayerScript : MonoBehaviour {
 
     public int xSpeed = 5;
     public int ySpeed = 5;
-    public Vector3 mouse;
+    private Vector3 mouse;
     public string xaxis = "P1X";
     public string yaxis = "P1Y";
     public string rxAxis = "P1SX";
@@ -18,7 +18,9 @@ public class PlayerScript : MonoBehaviour {
     public bool facingRight;
     public GameObject ball = null;
     public bool hasPossession;
-    public float multiplier = 50; 
+    public float multiplier = 50;
+
+    public BallScript ballScript;
     //public Vector3 worldPos;
    // public Vector3 ballPos;
     //public Vector3 shoot;
@@ -36,11 +38,6 @@ public class PlayerScript : MonoBehaviour {
         // Get input from joysticks
         float inX = Input.GetAxis(xaxis);
         float inY = Input.GetAxis(yaxis);
-
-        float dirX = Input.GetAxis(rxAxis);
-        float dirY = Input.GetAxis(ryAxis);
-
-        print("Move Direction: " + inX + ", " + inY);
 
         // Flip the character to face direction of movement
         if (inX < 0 && facingRight) {
@@ -63,7 +60,6 @@ public class PlayerScript : MonoBehaviour {
 
         // JoyStick Support
         if (Input.GetButtonDown("Shoot") && hasPossession) {
-            print("Shoot");
             JoystickShoot(ball);
         }
         //worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));
@@ -98,7 +94,8 @@ public class PlayerScript : MonoBehaviour {
         if(coll.gameObject.tag == "ball")
         {
             hasPossession = true;
-            ball = coll.gameObject; 
+            ball = coll.gameObject;
+            ballScript = ball.GetComponent<BallScript>();
         }
     }
 
@@ -133,18 +130,24 @@ public class PlayerScript : MonoBehaviour {
     /// <param name="ball"></param>
     void JoystickShoot(GameObject ball) {
 
+        // Get Direction of Right Joystick
         float dirX = Input.GetAxis(rxAxis);
         float dirY = Input.GetAxis(ryAxis);
 
-        print("Shot Direction: " + dirX + ", " + dirY);
-
+        // Create vector in direction of right jostick
         Vector2 direction = new Vector2(dirX, dirY);
 
-        // x6 multiplier needed for believable shot
+        // multiplier needed for believable shot
         direction *= (shotStrength * 50);
 
+        // Let go of ball
+        hasPossession = false;
+        ballScript.setFollow(false);
+
+        // Add force to ball
         ball.GetComponent<Rigidbody2D>().AddForce(direction);
 
-        print("Shot Taken!");
+        ball = null;
+       
     }
 }

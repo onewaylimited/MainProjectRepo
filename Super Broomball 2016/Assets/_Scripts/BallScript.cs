@@ -3,10 +3,11 @@ using System.Collections;
 
 public class BallScript : MonoBehaviour {
 
+    private bool followPlayer = false;
     public GameObject player;
     Rigidbody2D rb;
     public bool inPossession;
-    public float followSpeed = 2;
+    public float followSpeed = 4;
     public PlayerScript play;
     private AudioSource source;
 
@@ -18,11 +19,16 @@ public class BallScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (player != null)
+        if (player != null && followPlayer)
         {
            follow();
         }
 	}
+
+    // Set if the ball should follow player anymore
+    public void setFollow(bool followPlayer) {
+        this.followPlayer = followPlayer;
+    }
 
     void OnTriggerEnter2D(Collider2D coll)
     {
@@ -32,6 +38,7 @@ public class BallScript : MonoBehaviour {
             inPossession = true;
             player = coll.gameObject;
             play = (PlayerScript)player.GetComponent(typeof(PlayerScript));
+            followPlayer = true;
         }
     }
 
@@ -42,6 +49,7 @@ public class BallScript : MonoBehaviour {
             inPossession = false;
             player = null;
             play = null;
+            followPlayer = false;
         }
     }
 
