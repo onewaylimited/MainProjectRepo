@@ -11,6 +11,8 @@ public class PlayerScript : MonoBehaviour {
     public string rxAxis = "P1SX";
     public string ryAxis = "P1SY";
 
+    public BoxCollider2D boxCollider;
+
     // Around 200-250 good range for this
     public float shotStrength = 200;
     
@@ -66,10 +68,15 @@ public class PlayerScript : MonoBehaviour {
         //ballPos = ball.GetComponent<Transform>().position;
        // shoot = worldPos - ballPos;
     }
+    /// <summary>
+    /// Get direction player is facing
+    /// </summary>
+    /// <returns></returns>
     public bool getBool()
     {
             return facingRight;
     }
+
     void FixedUpdate()
     {
         GetComponent<Rigidbody2D>().velocity = movement;
@@ -107,6 +114,14 @@ public class PlayerScript : MonoBehaviour {
         if(coll.gameObject.tag == "ball") {
             hasPossession = false;
         }
+    }
+
+    /// <summary>
+    /// Return the boxcollider attached to this player
+    /// </summary>
+    /// <returns></returns>
+    public BoxCollider2D getBoxCollider() {
+        return boxCollider;
     }
 
     /// <summary>
