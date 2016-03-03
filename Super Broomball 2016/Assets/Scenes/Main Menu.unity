@@ -224,7 +224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Play
+  m_Text: Leaderboard
 --- !u!222 &200933366
 CanvasRenderer:
   m_ObjectHideFlags: 0
