@@ -23,6 +23,7 @@ public class PlayerScript : MonoBehaviour {
     public float multiplier = 50;
 
     public BallScript ballScript;
+
     //public Vector3 worldPos;
    // public Vector3 ballPos;
     //public Vector3 shoot;
@@ -68,10 +69,11 @@ public class PlayerScript : MonoBehaviour {
         //ballPos = ball.GetComponent<Transform>().position;
        // shoot = worldPos - ballPos;
     }
-    public bool getBool()
+    public bool getDirection()
     {
             return facingRight;
     }
+
     void FixedUpdate()
     {
         GetComponent<Rigidbody2D>().velocity = movement;
@@ -90,6 +92,10 @@ public class PlayerScript : MonoBehaviour {
         transform.localScale = charScale;
     }
 
+    /// <summary>
+    /// Get the box collider associated with this player
+    /// </summary>
+    /// <returns></returns>
     public BoxCollider2D getBoxCollider() {
         return boxCollider;
     }
