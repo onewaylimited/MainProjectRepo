@@ -30,7 +30,9 @@ public class PlayerScript : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-
+        if (!facingRight) {
+            Flip(0);
+        }
     }
 	
 	// Update is called once per frame
@@ -44,10 +46,10 @@ public class PlayerScript : MonoBehaviour {
 
         // Flip the character to face direction of movement
         if (inX < 0 && facingRight) {
-            Flip();
+            Flip(1);
         }
         else if(inX > 0 && !facingRight) {
-            Flip();
+            Flip(1);
         }
 
         movement = new Vector2(
@@ -81,10 +83,14 @@ public class PlayerScript : MonoBehaviour {
 
     /// <summary>
     /// Change direction character is facing
+    /// If you are using for during game, pass a 1 to the function
+    /// If you are using for setup, pass a 0 to the function
     /// </summary>
-    void Flip() {
+    void Flip(int type) {
         // Change direction facing
-        facingRight = !facingRight;
+        if(type == 1) {
+            facingRight = !facingRight;
+        }
 
         // Flip the scale of the Character
         Vector3 charScale = transform.localScale;
