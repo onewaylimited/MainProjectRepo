@@ -59,10 +59,17 @@ public class BallScript : MonoBehaviour {
     }
 
     void follow() {
-            if (play.getDirection()) {
+            /*if (play.getDirection()) {
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.GetComponent<Transform>().position.x + .5F, player.GetComponent<Transform>().position.y - .4F, player.GetComponent<Transform>().position.z), followSpeed * Time.deltaTime);
             }
             else
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.GetComponent<Transform>().position.x - .5F, player.GetComponent<Transform>().position.y - .4F, player.GetComponent<Transform>().position.z), followSpeed * Time.deltaTime);
+                */
+        if (play.getDirection()) {
+            transform.position = new Vector3(player.GetComponent<Transform>().position.x + .5F, player.GetComponent<Transform>().position.y - .4F);
+        }
+        else {
+            transform.position = new Vector3(player.GetComponent<Transform>().position.x - .5F, player.GetComponent<Transform>().position.y - .4F);
+        }
     }
 }

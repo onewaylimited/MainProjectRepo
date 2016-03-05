@@ -81,8 +81,8 @@ public class PlayerScript : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        GetComponent<Rigidbody2D>().AddForce(1.5f * previousMovement);
-        GetComponent<Rigidbody2D>().velocity = movement;
+        GetComponent<Rigidbody2D>().AddForce(.2f * previousMovement);
+        GetComponent<Rigidbody2D>().AddForce(.5f * movement);
         previousMovement = movement;
     }
 
