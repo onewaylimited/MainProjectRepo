@@ -866,7 +866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   inPossession: 0
-  followSpeed: 5
+  followSpeed: 8
   play: {fileID: 0}
 --- !u!1001 &2015129444
 Prefab:
