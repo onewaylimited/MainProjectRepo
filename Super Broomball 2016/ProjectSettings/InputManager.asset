@@ -32,7 +32,7 @@ InputManager:
     gravity: 3
     dead: 0.4
     sensitivity: 3
-    snap: 1
+    snap: 0
     invert: 0
     type: 2
     axis: 0
@@ -64,7 +64,7 @@ InputManager:
     gravity: 3
     dead: 0.4
     sensitivity: 3
-    snap: 1
+    snap: 0
     invert: 0
     type: 2
     axis: 0
@@ -96,7 +96,7 @@ InputManager:
     gravity: 3
     dead: 0.4
     sensitivity: 3
-    snap: 1
+    snap: 0
     invert: 1
     type: 2
     axis: 1
@@ -119,7 +119,7 @@ InputManager:
     joyNum: 0
   - serializedVersion: 3
     m_Name: P2Y
-    descriptiveName: 
+    descriptiveName: Joystick Input
     descriptiveNegativeName: 
     negativeButton: down
     positiveButton: up
@@ -129,7 +129,7 @@ InputManager:
     dead: 0.4
     sensitivity: 3
     snap: 0
-    invert: 0
+    invert: 1
     type: 2
     axis: 1
     joyNum: 2

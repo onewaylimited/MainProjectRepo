@@ -365,7 +365,7 @@ Transform:
   m_LocalScale: {x: 2.3, y: 2.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
 --- !u!114 &690286332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ AudioSource:
   rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
-  BypassReverbZones: 0
+  BypassReverbZones: 1
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -556,7 +556,7 @@ Transform:
   m_LocalScale: {x: -2.303732, y: 2.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!114 &949317979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,7 +715,7 @@ Transform:
   m_LocalScale: {x: 3.6673772, y: 3.5920072, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!1 &1797311078 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 142428, guid: b198c52724c8068458ef7b1fc481194f, type: 2}

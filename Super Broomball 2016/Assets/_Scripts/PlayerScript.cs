@@ -24,6 +24,8 @@ public class PlayerScript : MonoBehaviour {
 
     public BallScript ballScript;
 
+    private Vector2 previousMovement = Vector2.zero;
+
     //public Vector3 worldPos;
    // public Vector3 ballPos;
     //public Vector3 shoot;
@@ -43,6 +45,8 @@ public class PlayerScript : MonoBehaviour {
         // Get input from joysticks
         float inX = Input.GetAxis(xaxis);
         float inY = Input.GetAxis(yaxis);
+
+        print("Input: " + inX + ", " + inY);
 
         // Flip the character to face direction of movement
         if (inX < 0 && facingRight) {
@@ -76,9 +80,10 @@ public class PlayerScript : MonoBehaviour {
             return facingRight;
     }
 
-    void FixedUpdate()
-    {
+    void FixedUpdate() {
+        GetComponent<Rigidbody2D>().AddForce(1.5f * previousMovement);
         GetComponent<Rigidbody2D>().velocity = movement;
+        previousMovement = movement;
     }
 
     /// <summary>
