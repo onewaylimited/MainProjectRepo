@@ -440,7 +440,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: af89accf03315ae4a9b64c6418d3fc53, type: 3}
   - {fileID: 21300000, guid: fd01e34168e1c3249831d0e2e234add4, type: 3}
   - {fileID: 21300000, guid: 6310cd483de425d4492fabe294310d5b, type: 3}
-  framesPerSecond: 10
+  framesPerSecond: 20
 --- !u!114 &682506703
 MonoBehaviour:
   m_ObjectHideFlags: 0
