@@ -44,6 +44,8 @@ public class BallScript : MonoBehaviour {
             if (playerBox != null) {
                 Physics2D.IgnoreCollision(playerBox, GetComponent<Collider2D>());
             }
+
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }
     }
 

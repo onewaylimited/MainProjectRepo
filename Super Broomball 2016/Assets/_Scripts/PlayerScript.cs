@@ -24,7 +24,7 @@ public class PlayerScript : MonoBehaviour {
 
     public BallScript ballScript;
 
-    private Vector2 previousMovement = Vector2.zero;
+    public float frictionCoefficent = 0.8f;
 
     //public Vector3 worldPos;
    // public Vector3 ballPos;
@@ -81,9 +81,11 @@ public class PlayerScript : MonoBehaviour {
     }
 
     void FixedUpdate() {
-        GetComponent<Rigidbody2D>().AddForce(.2f * previousMovement);
         GetComponent<Rigidbody2D>().AddForce(.5f * movement);
-        previousMovement = movement;
+        if (movement.x == 0 && movement.y == 0 && GetComponent<Rigidbody2D>().velocity != Vector2.zero) {
+            Vector2 friction = GetComponent<Rigidbody2D>().velocity * -1;
+            GetComponent<Rigidbody2D>().AddForce(friction * frictionCoefficent);
+        }
     }
 
     /// <summary>
@@ -109,6 +111,12 @@ public class PlayerScript : MonoBehaviour {
     /// <returns></returns>
     public BoxCollider2D getBoxCollider() {
         return boxCollider;
+    }
+
+    void OnCollisionEnter2D(Collider2D coll) {
+        if(coll.gameObject.tag == "goal") {
+            movement = movement * 1.2f;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)
