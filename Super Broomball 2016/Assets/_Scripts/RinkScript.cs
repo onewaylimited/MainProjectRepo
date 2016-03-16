@@ -26,7 +26,7 @@ public class RinkScript : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D coll) {
-        if(coll.gameObject.tag == "ball") {
+        if (coll.gameObject.tag == "ball") {
             audio.Play();
         }
     }

@@ -13,6 +13,8 @@ public class PlayerScript : MonoBehaviour {
 
     // Around 200-250 good range for this
     public float shotStrength = 200;
+
+    public BoxCollider2D boxCollider;
     
     private Vector2 movement;
     public bool facingRight;
@@ -21,13 +23,18 @@ public class PlayerScript : MonoBehaviour {
     public float multiplier = 50;
 
     public BallScript ballScript;
+
+    public float frictionCoefficent = 0.8f;
+
     //public Vector3 worldPos;
    // public Vector3 ballPos;
     //public Vector3 shoot;
     
 	// Use this for initialization
 	void Start () {
-
+        if (!facingRight) {
+            Flip(0);
+        }
     }
 	
 	// Update is called once per frame
@@ -39,12 +46,14 @@ public class PlayerScript : MonoBehaviour {
         float inX = Input.GetAxis(xaxis);
         float inY = Input.GetAxis(yaxis);
 
+        print("Input: " + inX + ", " + inY);
+
         // Flip the character to face direction of movement
         if (inX < 0 && facingRight) {
-            Flip();
+            Flip(1);
         }
         else if(inX > 0 && !facingRight) {
-            Flip();
+            Flip(1);
         }
 
         movement = new Vector2(
@@ -67,26 +76,48 @@ public class PlayerScript : MonoBehaviour {
         //ballPos = ball.GetComponent<Transform>().position;
        // shoot = worldPos - ballPos;
     }
-    public bool getBool()
+    public bool getDirection()
     {
             return facingRight;
     }
-    void FixedUpdate()
-    {
-        GetComponent<Rigidbody2D>().velocity = movement;
+
+    void FixedUpdate() {
+        GetComponent<Rigidbody2D>().AddForce(.5f * movement);
+        if (movement.x == 0 && movement.y == 0 && GetComponent<Rigidbody2D>().velocity != Vector2.zero) {
+            Vector2 friction = GetComponent<Rigidbody2D>().velocity * -1;
+            GetComponent<Rigidbody2D>().AddForce(friction * frictionCoefficent);
+        }
     }
 
     /// <summary>
     /// Change direction character is facing
+    /// If you are using for during game, pass a 1 to the function
+    /// If you are using for setup, pass a 0 to the function
     /// </summary>
-    void Flip() {
+    void Flip(int type) {
         // Change direction facing
-        facingRight = !facingRight;
+        if(type == 1) {
+            facingRight = !facingRight;
+        }
 
         // Flip the scale of the Character
         Vector3 charScale = transform.localScale;
         charScale.x *= -1;
         transform.localScale = charScale;
+    }
+
+    /// <summary>
+    /// Get the box collider associated with this player
+    /// </summary>
+    /// <returns></returns>
+    public BoxCollider2D getBoxCollider() {
+        return boxCollider;
+    }
+
+    void OnCollisionEnter2D(Collider2D coll) {
+        if(coll.gameObject.tag == "goal") {
+            movement = movement * 1.2f;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D coll)
