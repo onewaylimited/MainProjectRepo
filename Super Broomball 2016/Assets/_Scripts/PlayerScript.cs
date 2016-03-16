@@ -60,7 +60,6 @@ public class PlayerScript : MonoBehaviour {
 
         // JoyStick Support
         if (Input.GetButtonDown("Shoot") && hasPossession) {
-            
             JoystickShoot(ball);
         }
         //worldPos = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 15));

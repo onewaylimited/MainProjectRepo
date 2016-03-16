@@ -352,16 +352,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 5
   ySpeed: 5
+  mouse: {x: 0, y: 0, z: 0}
   xaxis: P2X
   yaxis: P2Y
-  rxAxis: P1SX
-  ryAxis: P1SY
   shotStrength: 5
   facingRight: 0
   ball: {fileID: 0}
   hasPossession: 0
   multiplier: 50
-  ballScript: {fileID: 0}
 --- !u!23 &677353451
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -803,76 +801,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!1 &1061089237
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 1061089238}
-  - 212: {fileID: 1061089240}
-  - 114: {fileID: 1061089239}
-  m_Layer: 0
-  m_Name: arrow
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1061089238
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1061089237}
-  m_LocalRotation: {x: 0.08715575, y: 0, z: 0, w: 0.9961947}
-  m_LocalPosition: {x: 0.75, y: -0.4, z: -0.01}
-  m_LocalScale: {x: 0.59031975, y: 0.5872951, z: 0.98716855}
-  m_Children: []
-  m_Father: {fileID: 1611385019}
-  m_RootOrder: 0
---- !u!114 &1061089239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1061089237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efaa5bb3a9475d349b79e16d605ebb7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!212 &1061089240
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1061089237}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_ReflectionProbeUsage: 0
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6990afecea5edff4bac52c69b4875471, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
 --- !u!1 &1611385015
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,16 +835,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   xSpeed: 5
   ySpeed: 5
+  mouse: {x: 0, y: 0, z: 0}
   xaxis: P1X
   yaxis: P1Y
-  rxAxis: P1SX
-  ryAxis: P1SY
   shotStrength: 5
   facingRight: 1
   ball: {fileID: 0}
   hasPossession: 0
   multiplier: 50
-  ballScript: {fileID: 0}
 --- !u!23 &1611385017
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -959,8 +885,7 @@ Transform:
   m_LocalRotation: {x: -0.08715575, y: 0, z: 0, w: 0.9961947}
   m_LocalPosition: {x: -1.84, y: 1.36, z: -0.16}
   m_LocalScale: {x: 1.6939971, y: 1.7407542, z: 1}
-  m_Children:
-  - {fileID: 1061089238}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
 --- !u!50 &1611385020
@@ -1101,4 +1026,3 @@ MonoBehaviour:
   player: {fileID: 0}
   inPossession: 0
   followSpeed: 5
-  play: {fileID: 0}
