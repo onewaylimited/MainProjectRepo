@@ -9,7 +9,7 @@ public class AimAssist : MonoBehaviour
   
     void Start()
     {
-      GetComponentInParent
+     
     }
 
 
