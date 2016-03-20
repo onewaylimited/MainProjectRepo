@@ -21,6 +21,7 @@ public class BallScript : MonoBehaviour {
 	void Update () {
         if (player != null && followPlayer)
         {
+            
            follow();
         }
 	}
@@ -38,6 +39,8 @@ public class BallScript : MonoBehaviour {
             inPossession = true;
             player = coll.gameObject;
             play = (PlayerScript)player.GetComponent(typeof(PlayerScript));
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), play.boxCollider);  // Dont allow collisions with player box
+            GetComponent<Rigidbody2D>().velocity = Vector2.zero;  // Set velocity to zero once entered trigger
             followPlayer = true;
         }
     }
@@ -55,11 +58,10 @@ public class BallScript : MonoBehaviour {
 
     void follow()
     {
-       if (play.getBool())
-        {
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.GetComponent<Transform>().position.x + .5F, player.GetComponent<Transform>().position.y -.4F, player.GetComponent<Transform>().position.z) , followSpeed * Time.deltaTime);
+        if (play.getBool()) {
+            transform.position = new Vector3(player.GetComponent<Transform>().position.x + .5F, player.GetComponent<Transform>().position.y - .4F, player.GetComponent<Transform>().position.z);
         }
         else
-            transform.position = Vector3.MoveTowards(transform.position, new Vector3(player.GetComponent<Transform>().position.x - .5F, player.GetComponent<Transform>().position.y - .4F, player.GetComponent<Transform>().position.z), followSpeed * Time.deltaTime);
+            transform.position = new Vector3(player.GetComponent<Transform>().position.x - .5F, player.GetComponent<Transform>().position.y - .4F, player.GetComponent<Transform>().position.z);
     }
 }
