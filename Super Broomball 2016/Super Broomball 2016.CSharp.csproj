@@ -73,6 +73,7 @@
     <Compile Include="Assets\_Scripts\PlayerScript.cs" />
     <Compile Include="Assets\_Scripts\RinkScript.cs" />
     <Compile Include="Assets\_Scripts\ScaleBackground.cs" />
+    <Compile Include="Assets\_Scripts\Scoreboard.cs" />
     <Compile Include="Assets\_Scripts\ToggleSound.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
