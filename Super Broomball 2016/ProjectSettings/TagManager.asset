@@ -7,6 +7,8 @@ TagManager:
   - player
   - ball
   - goal
+  - Home
+  - Away
   layers:
   - Default
   - TransparentFX
