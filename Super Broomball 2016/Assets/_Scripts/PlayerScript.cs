@@ -19,6 +19,8 @@ public class PlayerScript : MonoBehaviour {
     public bool hasPossession;
     public float multiplier = 50;
 
+    public BoxCollider2D boxCollider;
+
     public BallScript ballScript;
     //public Vector3 worldPos;
    // public Vector3 ballPos;
@@ -26,7 +28,12 @@ public class PlayerScript : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-       
+        // Flip player to face correct direction at start of match
+        if (!facingRight) {
+            Flip();
+            facingRight = !facingRight;
+        }
+
     }
 	
 	// Update is called once per frame
