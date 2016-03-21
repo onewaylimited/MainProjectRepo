@@ -13,7 +13,6 @@ public class PlayerScript : MonoBehaviour {
 
     // Around 200-250 good range for this
     public float shotStrength = 200;
-    
     private Vector2 movement;
     public bool facingRight;
     public GameObject ball = null;
@@ -34,6 +33,7 @@ public class PlayerScript : MonoBehaviour {
             Flip();
             facingRight = !facingRight;
         }
+
     }
 	
 	// Update is called once per frame
