@@ -45,15 +45,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\_Scripts\AimAssist.cs" />
      <Compile Include="Assets\_Scripts\BackgroundMusic.cs" />
      <Compile Include="Assets\_Scripts\BallScript.cs" />
      <Compile Include="Assets\_Scripts\Ball_Handling.cs" />
      <Compile Include="Assets\_Scripts\Bounce.cs" />
+     <Compile Include="Assets\_Scripts\GoalieScript.cs" />
      <Compile Include="Assets\_Scripts\LoadOnClick.cs" />
      <Compile Include="Assets\_Scripts\PlayGif.cs" />
      <Compile Include="Assets\_Scripts\PlayerScript.cs" />
      <Compile Include="Assets\_Scripts\RinkScript.cs" />
      <Compile Include="Assets\_Scripts\ScaleBackground.cs" />
+     <Compile Include="Assets\_Scripts\Scoreboard.cs" />
      <Compile Include="Assets\_Scripts\ToggleSound.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
