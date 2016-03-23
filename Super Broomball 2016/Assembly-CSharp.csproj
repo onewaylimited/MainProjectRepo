@@ -50,6 +50,12 @@
      <Compile Include="Assets\_Scripts\BallScript.cs" />
      <Compile Include="Assets\_Scripts\Ball_Handling.cs" />
      <Compile Include="Assets\_Scripts\Bounce.cs" />
+     <Compile Include="Assets\_Scripts\DB Scripts\Feedback.cs" />
+     <Compile Include="Assets\_Scripts\DB Scripts\Login.cs" />
+     <Compile Include="Assets\_Scripts\DB Scripts\MD5Hash.cs" />
+     <Compile Include="Assets\_Scripts\DB Scripts\Register.cs" />
+     <Compile Include="Assets\_Scripts\DB Scripts\TestCalling.cs" />
+     <Compile Include="Assets\_Scripts\DB Scripts\UserAccount.cs" />
      <Compile Include="Assets\_Scripts\GoalieScript.cs" />
      <Compile Include="Assets\_Scripts\LoadOnClick.cs" />
      <Compile Include="Assets\_Scripts\PlayGif.cs" />
