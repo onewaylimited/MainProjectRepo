@@ -2,14 +2,22 @@
 using UnityEngine.UI;
 using System.Collections;
 
+/// <summary>
+/// Not using this class, might go back to it later though
+/// </summary>
 public class Feedback : MonoBehaviour {
-    public static Text feedbackString;
+    public Text feedbackString;
+
+    private static Feedback instance;
+    private void Awake() {
+        instance = this;
+    }
 
     public static void setFeedback(string str) {
-        feedbackString.text = "*" + str + "*";
+        instance.feedbackString.text = "*" + str + "*";
     }
 
     public static string getFeedback() {
-        return feedbackString.text;
+        return instance.feedbackString.text;
     }
 }

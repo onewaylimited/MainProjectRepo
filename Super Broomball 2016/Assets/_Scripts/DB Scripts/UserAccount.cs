@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 /*
@@ -11,14 +12,18 @@ public class UserAccount : MonoBehaviour {
 	private int uID;
 	private string username;
 
+    /// <summary>
+    /// This string gets changed on each successful login and is
+    /// used to validate the player.
+    /// </summary>
+    private string sessionCode;
+
+    /// <summary>
+    /// Records the instance of UserAccount that gets created.
+    /// This is so we can access non-static variables that are
+    /// used to save scene objects (Like InputField and Text objects)
+    /// </summary>
     public static UserAccount instance;
-
-	/* This string is changed on each successful login.
-	 * It's used to validate that a person is who they
-	 * say they are.
-	 */
-	private string sessionCode;
-
     private void Awake() {
         instance = this;
     }
